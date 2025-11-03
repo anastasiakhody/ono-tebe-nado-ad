@@ -1,22 +1,39 @@
-/* === HEADER === */
+/* Базовые сбросы */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* HEADER - точные размеры из Figma */
 .header {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr 148px 1fr;
   align-items: center;
-  padding: 92px 50px 92px;
+  padding: 92px 50px;
+  max-width: 1340px;
+  margin: 0 auto;
 }
 
 .header__menu {
-  padding-top: 43px;
+  justify-self: start;
 }
 
 .header__links-list {
   display: flex;
   gap: 32px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  list-style: circle;
+}
+
+.header__links-list-item {
+  font-size: 18px;
 }
 
 .header__links-list-item_no-bullit {
@@ -25,8 +42,8 @@
 
 .header__link {
   text-decoration: underline;
-  text-underline-position: under;
-  color: inherit;
+  text-underline-offset: 4px;
+  color: #000;
 }
 
 .header__link-active {
@@ -35,66 +52,70 @@
 
 .header__logo {
   width: 148px;
-  height: 106px;
-  margin-bottom: 3px;
+  height: 105px;
   justify-self: center;
+}
+
+.header__logo-image {
+  width: 100%;
+  height: 100%;
 }
 
 .header__address {
   justify-self: end;
   font-style: normal;
-  line-height: 1.35;
-  text-underline-position: under;
+  line-height: 24.3px;
   max-width: 240px;
 }
 
-/* === COVER === */
+.address {
+  font-size: 18px;
+  line-height: 24.3px;
+}
 
+/* COVER - точные размеры из Figma */
 .cover {
   position: relative;
   background-image: url("../images/cover.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   padding: 165px 50px 50px;
+  color: #FFF;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .overlay {
   position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(0, 0, 0, 0.6);
 }
 
 .cover__title {
   position: relative;
   z-index: 2;
-  color: #fff;
   font-size: 100px;
   font-weight: 700;
   letter-spacing: 30px;
   text-transform: uppercase;
+  line-height: 115%;
 }
 
 .aligned-text {
   display: block;
-  line-height: 115%;
+  margin-bottom: 20px;
 }
 
 .aligned-text_center {
   text-align: center;
   line-height: 100%;
-  padding: 0;
+  margin: 20px 0;
+  padding-right: 60px;
 }
 
 .aligned-text_right {
-  text-align: end;
+  text-align: right;
   line-height: 100%;
 }
 
@@ -107,80 +128,77 @@
 }
 
 .cover__description {
+  position: relative;
   z-index: 2;
   display: flex;
-  align-items: center;
   justify-content: end;
+  align-items: center;
   gap: 78px;
+  margin-top: 135px;
 }
 
 .cover__description-text {
-  font-weight: 400;
   font-size: 22px;
-  color: #fff;
-  line-height: 127%;
-  word-spacing: 18px;
-  white-space: nowrap;
+  font-weight: 400;
+  line-height: 28px;
   text-transform: uppercase;
+  word-spacing: 18px;
 }
 
 .bet-button {
   font-size: 22px;
-  cursor: pointer;
-  color: #fff;
-  padding: 12px 32px;
-  border: 1px solid #fff;
+  font-weight: 400;
+  color: #FFF;
   text-transform: uppercase;
-  background-color: transparent;
+  background: transparent;
+  border: 1px solid #FFF;
+  padding: 12px 32px;
+  cursor: pointer;
+  min-width: 257px;
 }
 
-/* === LOTS === */
-
+/* LOTS - точные размеры из Figma */
 .lots {
-  display: flex;
-  flex-direction: column;
-  padding: 180px 50px 181px;
+  padding: 180px 50px;
+  max-width: 1340px;
+  margin: 0 auto;
 }
 
 .lots__heading {
-  text-transform: uppercase;
   font-size: 40px;
   font-weight: 700;
-  margin: 0 0 27px;
-  padding-left: 40px;
+  text-transform: uppercase;
+  margin: 0 0 27px 40px;
 }
 
 .lots__card-list {
   display: flex;
-  flex-wrap: wrap;
-  list-style: none;
   gap: 25px;
-  margin: 0;
-  padding: 0;
+  list-style: none;
+  margin-bottom: 30px;
 }
 
 .lots__card-list-item {
-  width: 430px;
-  min-height: 450px;
-  flex-grow: 1;
+  flex: 1;
+  min-width: 430px;
 }
 
 .card-link {
-  display: block;
   text-decoration: none;
+  display: block;
   height: 100%;
 }
 
 .card {
   position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  height: 450px;
+  padding: 50px 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 50px 40px;
-  height: 100%;
+  background-size: cover;
+  background-position: center;
+  color: #FFF;
 }
 
 .card_type_film {
@@ -196,52 +214,49 @@
 }
 
 .card__title {
-  text-transform: uppercase;
-  text-decoration: underline;
-  text-underline-position: under;
-  text-underline-offset: -0.09em;
-  z-index: 2;
-  color: #fff;
   font-size: 22px;
   font-weight: 700;
-  line-height: 120%;
+  line-height: 26.4px;
+  text-decoration: underline;
+  text-transform: uppercase;
+  z-index: 2;
 }
 
 .card__text {
-  z-index: 2;
-  line-height: 120%;
-  color: #fff;
-  font-weight: 400;
   font-size: 20px;
-  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  z-index: 2;
 }
 
 .lots__look-more-link {
   font-size: 20px;
-  text-underline-position: under;
-  text-underline-offset: 0.05em;
-  padding: 30px 0 0 40px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  margin-left: 40px;
+  color: #000;
 }
 
-/* === ABOUT === */
-
+/* ABOUT - точные размеры из Figma */
 .about {
-  display: grid;
-  grid-template-columns: 430px auto;
-  gap: 25px;
   padding: 0 50px 180px;
+  max-width: 1340px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 430px 1fr;
+  gap: 25px;
   align-items: start;
-  justify-items: start;
 }
 
 .about__logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 240px;
   height: 240px;
   border-radius: 50%;
-  background-color: #000;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
 }
 
 .about__logo-image {
@@ -250,11 +265,10 @@
 }
 
 .about__title {
-  margin: 100px 0;
-  font-weight: 700;
   font-size: 40px;
-  font-style: normal;
+  font-weight: 700;
   text-transform: uppercase;
+  margin: 100px 0;
 }
 
 .about__text {
@@ -262,84 +276,77 @@
   flex-direction: column;
   gap: 25px;
   font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
   line-height: normal;
 }
 
-/* === FOOTER === */
-
+/* FOOTER - точные размеры из Figma */
 .footer {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: start;
   padding: 0 50px 90px;
+  max-width: 1340px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: start;
 }
 
-.address {
-  font-size: 18px;
+.footer__address {
+  justify-self: start;
   font-style: normal;
-  font-weight: 400;
-  line-height: 135%;
-  text-underline-position: under;
+  max-width: 240px;
+}
+
+.footer__menu {
+  justify-self: center;
 }
 
 .footer__menu-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   list-style: none;
-  margin: 0;
-  padding: 0;
+  text-align: center;
 }
 
 .footer__menu-link {
+  font-size: 18px;
   text-decoration: underline;
-  text-underline-position: under;
+  text-underline-offset: 4px;
+  color: #000;
 }
 
 .footer__menu-link_active {
   text-decoration: none;
 }
 
-.footer__social-nav {
+.footer__social {
   justify-self: end;
 }
 
 .footer__social-list {
   display: flex;
-  justify-content: space-between;
   gap: 48px;
   list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.footer__social-list-item {
-  height: 100%;
 }
 
 .footer__social-link {
-  text-decoration: none;
+  display: block;
 }
 
 .footer__social-icon {
+  width: 48px;
   height: 48px;
 }
 
-/* === GLOBAL TWEAKS === */
-
-a {
-  color: inherit;
-  text-decoration: underline;
-  text-underline-position: under;
+/* Утилитарные классы */
+.text-left {
+  text-align: left;
 }
 
-a:hover {
-  opacity: 0.8;
+.text-center {
+  text-align: center;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
+.text-right {
+  text-align: right;
+}
+
+.no-underline {
+  text-decoration: none;
 }
