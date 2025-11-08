@@ -108,21 +108,21 @@
 }
 
 .cover_description {
-    font-size: 22px;
+    font-size: 18px;
     font-family: "Raleway", sans-serif;
     color: #FFFFFF;
     display: grid;
     grid-template-columns: 2fr 1fr;
     align-items: center;
-    padding: 106px 50px 0 50px;
+    padding: 260px 50px 0 50px;
 }
 
 .cover_description_text {
     line-height: 28px;
     font-weight: 400;
     text-transform: uppercase;
-    word-spacing: 0.9em;
-    letter-spacing: 90%;
+    word-spacing: 0.5em;
+    letter-spacing: 10%;
 }
 
 .cover_description_button {
